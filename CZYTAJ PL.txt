@@ -1,0 +1,130 @@
+Rozpowszechnianie i licencja
+============================
+
+F3Site 2013 - (C) 2005-2013 COMPMaster - compmaster.prv.pl
+
+Niniejszy program jest wolnym oprogramowaniem - możesz go rozpowszechniać dalej i/lub modyfikować na warunkach Powszechnej Licencji Publicznej GNU wydanej przez Fundację Wolnego Oprogramowania, według wersji 3 tej Licencji lub dowolnej z późniejszych wersji.
+
+Niniejszy program rozpowszechniany jest z nadzieją, iż będzie on użyteczny - jednak BEZ ŻADNEJ GWARANCJI, nawet domyślnej gwarancji PRZYDATNOŚCI HANDLOWEJ albo PRZYDATNOŚCI DO OKREŚLONYCH ZASTOSOWAŃ. Bliższe informacje na ten temat można uzyskać z Powszechnej Licencji Publicznej GNU.
+
+Kopia Powszechnej Licencji Publicznej GNU powinna zostać ci dostarczona razem z tym programem. Jeżeli nie została dostarczona, odwiedź <http://www.gnu.org/licenses/>.
+
+System korzysta z komponentów:
+* Ikony Silk i Flags - http://www.famfamfam.com
+* Ikony Function - http://www.wefunction.com
+* Google Code Prettify - http://google-code-prettify.googlecode.com
+* Slimbox 2 - http://www.digitalia.be/software/slimbox2
+* reCAPTCHA - http://recaptcha.net
+* Microsoft Asirra - http://research.microsoft.com/asirra
+* TinyMCE - http://tinymce.moxiecode.com
+
+
+Wymagania
+=========
+
+* PHP 5.2 lub nowszy z włączonym rozszerzeniem PDO
+* Baza danych: MySQL 5.0.2+ lub SQLite 3+
+* Obsługa sesji PHP
+* Obsługa mod_rewrite, jeżeli chcesz używać przyjaznych adresów URL
+
+
+Instalacja
+==========
+
+1. Załaduj zawartośc katalogu SYSTEM na serwer za pomocą klienta FTP lub menedżera plików. Usuń niepotrzebne języki z folderu LANG, których nie będziesz używał.
+
+2. Nadaj plikom i folderom uprawnienia (CHMOD):
+* katalogi: CFG, CACHE, RSS - 777
+* wszystkie foldery w powyższych katalogach - 777
+* wszystkie pliki w powyższych katalogach - 766
+* katalogi: FILES, IMG - 777 (nieobowiązkowo)
+* katalogi: IMG/USER - 777 (wymagane, aby użytkownicy mogli wgrywać zdjęcia)
+
+3. Przejdź do katalogu INSTALL w przeglądarce internetowej, wpisując: http://adres-strony/install/
+Aby instalacja przebiegła poprawnie, użytkownik bazy danych musi mieć do niej pełne prawa.
+
+4. Jeżeli widzisz tylko białą stronę lub błąd 500, przeczytaj ostatnią sekcję tego pliku dotyczącą .htaccess.
+
+5. Instalator usunie WSZYSTKIE istniejące tabele z bazy danych z tym samym prefiksem nazw.
+
+6. Po instalacji USUŃ KATALOG INSTALL!
+
+7. Zaloguj się i dostosuj system w panelu administracyjnym.
+
+
+Przyjazne adresy
+================
+
+Aby używać przyjaznych adresów, serwer musi obsługiwać mod_rewrite. Odwiedź dział pomocy firmy hostingowej. Jeśli funkcja jest dostępna, a nie działa, dopisz linijkę RewriteBase do pliku .htaccess. Przykład:
+
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.+) index.php?go=$1 [L,QSA]
+
+Druga opcja uaktywnia przyjazne adresy bez mod_rewrite. Serwer musi obsługiwać PATH_INFO.
+
+
+Aktualizacje i pomoc techniczna
+===============================
+
+Pomoc uzyskasz na forum serwisu COMPMaster (compmaster.prv.pl). UWAGA! Strony niezgodne z prawem, nieprzyzwoite lub propagujące piractwo nie otrzymają wsparcia.
+
+Aktualna wersja rozwojowa F3Site jest dostępna w repozytorium SVN: f3site.googlecode.com
+
+
+Rozszerzenia i skórki
+=====================
+
+Możesz zwiększyć możliwości systemu za pomocą rozszerzeń. Przed instalacją jakiegokolwiek dodatku upewnij się, że pochodzi z zaufanego źródła, gdyż może on uszkodzić Twój wortal lub wykraść poufne dane!
+
+
+Bezpieczeństwo
+==============
+
+1. Co pewien czas utwórz kopię bazy danych i przechowuj w poufnym miejscu.
+
+2. Po instalacji nadaj plikowi cfg/db.php prawa 444 (tylko odczyt).
+
+3. NIKOMU NIE PODAWAJ SWOJEGO HASŁA! JEŻELI KORZYSTASZ Z INTERNETU W MIEJSCACH PUBLICZNYCH, ZAWSZE WYLOGUJ SIĘ PO ODEJŚCIU OD KOMPUTERA! JEŻELI TO MOŻLIWE, UAKTYWNIJ TRYB PRYWATNY W PRZEGLĄDARCE.
+
+4. Chroń swój komputer programem antywirusowym z aktualną bazą wirusów! Istnieje koń trojański, który kradnie zapisane hasła z klientów FTP, a następnie dodaje ukryte ramki <iframe> i złośliwe skrypty JavaScript do plików na serwerze! Jeżeli zobaczysz jakiekolwiek objawy (ostrzeżenia, nowe znaczniki w źródle strony), koniecznie przeskanuj komputer, zmień hasła do serwerów FTP i załaduj ponownie czyste pliki.
+
+5. Jeżeli używasz bazy danych SQLite, umieść plik .db w folderze prywatnym powyżej [www] lub [htdocs].
+
+
+Uwagi
+=====
+
+1. Skórki są kompilowane do kodu PHP do folderu CACHE, skąd system je wczytuje.
+2. Aby zlikwidować maskowanie adresu przez domenę, przekieruj ją do pliku domain.php.
+
+
+Panel administracyjny
+=====================
+
+Po zalogowaniu jest dostępny odnośnik do PA. Widzisz go tylko Ty oraz uprawnieni użytkownicy. Do PA możesz też dostać się, wpisując ręcznie ścieżkę do katalogu ADMIN.
+
+
+Edycja treści
+=============
+
+Tylko użytkownicy z rangą Redaktor, Administrator lub Właściciel mogą edytować zawartość. Po zalogowaniu jest dostępny odnośnik "Zarządzaj treścią". Aby w widoku kategorii dodać nową pozycję, kliknij ikonę +.
+
+
+Opcje konfiguracyjne serwera
+============================
+
+F3Site domyślnie zawiera 3 pliki .htaccess, aby uaktywnić przyjazne adresy URL i zmienić niektóre opcje PHP. Na niektórych serwerach ich zawartość lub obecność może powodować problemy.
+
+Aby zwiększyć bezpieczeństwo, wstaw ręcznie poniższe komendy do pliku .htaccess:
+
+php_flag session.use_only_cookies 1
+php_flag session.use_trans_sid 0
+php_flag register_globals 0
+php_flag magic_quotes_gpc 0
+
+Jeżeli serwer nie obsługuje komendy php_flag, zostanie wyświetlona pusta strona lub błąd 500. Część hostingów interpretuje polecenie SetEnv. Sprawdź, czy panel administracyjny serwera umożliwia zmianę opcji.
+
+Zapoznaj się z dokumentacją serwera, aby poznać dozwolone komendy. Jeżeli w żaden sposób nie możesz pozbyć się problemów, usuń plik .htaccess z głównego folderu, ADMIN oraz w ostateczności CFG.

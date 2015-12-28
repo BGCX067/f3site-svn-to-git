@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{LANG}">
+<head>
+	<title>{PAGE TITLE} - {MAIN TITLE}</title>
+	<meta name="robots" content="noindex">
+	<base href="{URL}">
+	<link rel="stylesheet" type="text/css" href="style/system/styles.css">
+	<link rel="stylesheet" type="text/css" href="style/system/admin.css">
+	<script type="text/javascript" src="lib/js.js"></script>
+</head>
+<body>
+<header>
+	<a href="" class="logoTop"><img src="style/system/img/top.jpg" alt="{MAIN TITLE}"></a>
+</header>
+<nav>
+	<a href=".">{lang.mainPage}</a>
+	<a href="admin">{lang.summary}</a>
+	<a href="url(edit)">{lang.mantxt}</a>
+</nav>
+<div id="all">
+	<div id="main" class="admin" style="overflow:visible">{CONTENT}</div>
+	<div id="left">
+		<div class="mh">Menu</div>
+		<div class="admenu">
+			<!-- START menu -->
+			<a href="{url}" class="A{class}">{text}</a>
+			<!-- STOP -->
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="copyright">&copy; 2005-2013 COMPMaster</div>
+	<div class="links"><a href="login.php?logout">{lang.logout}</a></div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,21 @@
+Tu będą informacje o autorach.
+
+Betatesterzy i osoby zasłużone:
+* Kamil811 (strony.el-dar.pl)
+* PanYeti (CyfroGraf)
+* skygod
+* jareQ
+* rafal
+* Fenek
+* Sh1moda
+* bolek12
+* Lavanos
+* BŁogi
+* DJ ProG
+* Ervil
+* mati1d
+* Petermechanic
+* RoboKomp
+
+Na liście znajdują się tylko osoby, które wyraziły na to zgodę.
+Jeżeli jesteś betatesterem F3Site i chcesz znaleźć się na liście, napisz do administratora.

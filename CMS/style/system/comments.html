@@ -1,0 +1,78 @@
+<!-- NOTICE: Do not change id and class attributes! -->
+<div id="comments">
+
+<!-- IF comment -->
+<table class="tb" style="line-height: 18px">
+<caption>{lang.comms}</caption>
+<colgroup>
+	<col style="width: 130px">
+	<col>
+</colgroup>
+<tbody>
+
+<!-- START comment -->
+<tr>
+	<td style="vertical-align: top; text-align: center" title="{agent}">
+		<div><b>
+
+		<!-- IF profile -->
+		<a href="{profile}">{user}</a>
+		<!-- ELSE -->
+		{user}
+		<!-- END -->
+
+		</b></div>
+
+		<!-- IF ip -->
+		<div><a href="{findIP}">{ip}</a></div>
+		<!-- END -->
+
+		<!-- IF photo -->
+		<div style="text-align: center; margin: 2px; overflow: hidden">
+			<img src="{photo}" alt="{user}">
+		</div>
+		<!-- END -->
+
+	</td>
+	<td style="max-width: 406px; word-wrap: break-word; vertical-align: top">
+		<div class="comDate">{date}</div>
+		<!-- IF del -->
+		<a href="{del}" style="float: right"><img src="img/icon/x.png" alt="-" title="{lang.del}"></a>
+		<!-- END -->
+		<!-- IF accept -->
+		<a href="{accept}" style="float: right"><img src="img/icon/accept.png" alt="+" title="{lang.accept}"></a>
+		<!-- END -->
+		<!-- IF edit -->
+		<a href="{edit}" style="float: right"><img src="img/icon/edit.png" alt="E" title="{lang.edit}"></a>
+		<!-- END -->
+		<h3 style="clear: left">{title}</h3>{text}
+	</td>
+</tr>
+<!-- STOP -->
+
+<!-- IF parts -->
+<tr>
+	<td colspan="2" class="pages">{parts}</td>
+</tr>
+<!-- END -->
+
+</tbody>
+</table>
+
+<!-- END -->
+
+<!-- IF url -->
+<a href="{url}" class="addComment">{lang.addComm}</a>
+<!-- END -->
+
+<!-- IF mustLogin -->
+<div class="box" style="text-align: center">{lang.loginComm}</div>
+<!-- END -->
+
+</div>
+<script type="text/javascript">
+include('lib/comm.js')
+<!-- IF color -->
+include('lib/prettify/run_prettify.js')
+<!-- END -->
+</script>
